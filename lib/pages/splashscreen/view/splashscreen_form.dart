@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodbank/pages/splashscreen/splashscreen.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashscreenForm extends StatelessWidget {
   const SplashscreenForm({super.key});
@@ -40,11 +41,14 @@ class SplashscreenForm extends StatelessWidget {
           ),
         ),
         Image.asset('assets/images/screen-picture.png'),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             top: kToolbarHeight,
           ),
           child: RoundedButton(
+            onPress: () => context.push(
+              '/login',
+            ),
             label: 'Get Started',
             backgroundColor: Colors.white,
             foregroundColor: Colors.orange,
