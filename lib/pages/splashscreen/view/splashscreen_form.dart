@@ -35,6 +35,7 @@ class SplashscreenForm extends StatelessWidget {
                 'Food for\nEveryone',
                 style: TextStyle(
                   fontSize: 65,
+                  color: Colors.white,
                 ),
               ),
             ],
