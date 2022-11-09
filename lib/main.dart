@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
               30,
             ),
           ),
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         ),
         tabBarTheme: TabBarTheme(
           indicator: const UnderlineTabIndicator(
@@ -112,12 +112,44 @@ class MyApp extends StatelessWidget {
           ),
         ),
         textTheme: const TextTheme(
+          subtitle1: TextStyle(
+            shadows: <Shadow>[
+              Shadow(
+                offset: Offset(
+                  0.0,
+                  4.0,
+                ),
+                blurRadius: 4.0,
+                color: Color.fromARGB(
+                  25,
+                  0,
+                  0,
+                  0,
+                ),
+              ),
+            ],
+          ),
           caption: TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'SF Pro',
             fontSize: 12,
           ),
           bodyText2: TextStyle(
+            shadows: <Shadow>[
+              Shadow(
+                offset: Offset(
+                  0.0,
+                  4.0,
+                ),
+                blurRadius: 4.0,
+                color: Color.fromARGB(
+                  25,
+                  0,
+                  0,
+                  0,
+                ),
+              ),
+            ],
             color: Colors.grey,
             fontWeight: FontWeight.bold,
             fontSize: 15,

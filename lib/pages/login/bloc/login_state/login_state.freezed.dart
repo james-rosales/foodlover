@@ -19,6 +19,7 @@ mixin _$LoginState {
   TextFieldInput get email => throw _privateConstructorUsedError;
   TextFieldInput get password => throw _privateConstructorUsedError;
   RequestStatus get requestStatus => throw _privateConstructorUsedError;
+  bool get obscure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LoginStateCopyWith<LoginState> get copyWith =>
@@ -34,7 +35,8 @@ abstract class $LoginStateCopyWith<$Res> {
   $Res call(
       {TextFieldInput email,
       TextFieldInput password,
-      RequestStatus requestStatus});
+      RequestStatus requestStatus,
+      bool obscure});
 
   $TextFieldInputCopyWith<$Res> get email;
   $TextFieldInputCopyWith<$Res> get password;
@@ -56,6 +58,7 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
     Object? email = null,
     Object? password = null,
     Object? requestStatus = null,
+    Object? obscure = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -70,6 +73,10 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
           ? _value.requestStatus
           : requestStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -101,7 +108,8 @@ abstract class _$$_LoginStateCopyWith<$Res>
   $Res call(
       {TextFieldInput email,
       TextFieldInput password,
-      RequestStatus requestStatus});
+      RequestStatus requestStatus,
+      bool obscure});
 
   @override
   $TextFieldInputCopyWith<$Res> get email;
@@ -123,6 +131,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? requestStatus = null,
+    Object? obscure = null,
   }) {
     return _then(_$_LoginState(
       email: null == email
@@ -137,6 +146,10 @@ class __$$_LoginStateCopyWithImpl<$Res>
           ? _value.requestStatus
           : requestStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -147,7 +160,8 @@ class _$_LoginState implements _LoginState {
   _$_LoginState(
       {this.email = const TextFieldInput(),
       this.password = const TextFieldInput(),
-      this.requestStatus = RequestStatus.waiting});
+      this.requestStatus = RequestStatus.waiting,
+      this.obscure = true});
 
   @override
   @JsonKey()
@@ -158,10 +172,13 @@ class _$_LoginState implements _LoginState {
   @override
   @JsonKey()
   final RequestStatus requestStatus;
+  @override
+  @JsonKey()
+  final bool obscure;
 
   @override
   String toString() {
-    return 'LoginState(email: $email, password: $password, requestStatus: $requestStatus)';
+    return 'LoginState(email: $email, password: $password, requestStatus: $requestStatus, obscure: $obscure)';
   }
 
   @override
@@ -173,11 +190,13 @@ class _$_LoginState implements _LoginState {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.requestStatus, requestStatus) ||
-                other.requestStatus == requestStatus));
+                other.requestStatus == requestStatus) &&
+            (identical(other.obscure, obscure) || other.obscure == obscure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, requestStatus);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, requestStatus, obscure);
 
   @JsonKey(ignore: true)
   @override
@@ -190,7 +209,8 @@ abstract class _LoginState implements LoginState {
   factory _LoginState(
       {final TextFieldInput email,
       final TextFieldInput password,
-      final RequestStatus requestStatus}) = _$_LoginState;
+      final RequestStatus requestStatus,
+      final bool obscure}) = _$_LoginState;
 
   @override
   TextFieldInput get email;
@@ -198,6 +218,8 @@ abstract class _LoginState implements LoginState {
   TextFieldInput get password;
   @override
   RequestStatus get requestStatus;
+  @override
+  bool get obscure;
   @override
   @JsonKey(ignore: true)
   _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>

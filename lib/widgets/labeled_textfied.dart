@@ -5,6 +5,8 @@ class LabeledTextfield extends StatelessWidget {
   final bool? obscure;
   final ValueChanged onChanged;
   final String? errorText;
+  final Widget? suffixIcon;
+  final VoidCallback? onPress;
 
   const LabeledTextfield({
     super.key,
@@ -12,6 +14,8 @@ class LabeledTextfield extends StatelessWidget {
     this.obscure,
     required this.onChanged,
     this.errorText,
+    this.suffixIcon,
+    this.onPress,
   });
 
   @override
@@ -19,7 +23,7 @@ class LabeledTextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         left: 30,
-        top: 50,
+        top: 40,
         right: 30,
       ),
       child: Column(
@@ -37,6 +41,7 @@ class LabeledTextfield extends StatelessWidget {
             ),
             obscureText: obscure ?? false,
             decoration: InputDecoration(
+              suffixIcon: suffixIcon,
               errorText: errorText,
               hintStyle: const TextStyle(
                 fontStyle: FontStyle.italic,

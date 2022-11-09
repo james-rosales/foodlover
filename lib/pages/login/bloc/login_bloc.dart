@@ -7,11 +7,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(super.initialState) {
     on<EmailChanged>(_emailChanged);
     on<PasswordChanged>(_passwordChanged);
+    on<ObscurePressed>(_obscurePressed);
   }
 
   void _emailChanged(EmailChanged event, Emitter<LoginState> emit) {
     String email = event.email;
     String? errorText = state.email.error;
+
     ErrorType errorType = ErrorType.none;
     if (email.isEmpty) {
       errorType = ErrorType.empty;
@@ -48,6 +50,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         value: password,
         errorType: errorType,
         error: errorText,
+      ),
+    );
+  }
+
+  void _obscurePressed(ObscurePressed event, Emitter<LoginState> emit) {
+    bool obscure = event.obscure;
+
+    emit(
+      state.copyWith(
+        obscure: obscure = !obscure,
       ),
     );
   }
