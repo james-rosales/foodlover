@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: const TextTheme(
           caption: TextStyle(
-            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.bold,
             fontFamily: 'SF Pro',
             fontSize: 12,
           ),
