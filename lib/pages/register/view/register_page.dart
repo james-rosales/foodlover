@@ -10,7 +10,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: BlocProvider<RegisterBloc>(
         create: (context) => RegisterBloc(RegisterState()),
-        child: RegisterForm(),
+        child: const RegisterForm(),
       ),
     );
   }

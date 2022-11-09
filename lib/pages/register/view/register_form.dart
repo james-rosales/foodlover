@@ -61,9 +61,14 @@ class RegisterForm extends StatelessWidget {
                   top: 30,
                 ),
                 child: RoundedButton(
+                  onPress: () {
+                    bloc.add(EmailChanged(state.email.value));
+                    bloc.add(PasswordChanged(state.password.value));
+                    bloc.add(
+                        ConfirmPasswordChanged(state.confirmPassword.value));
+                    bloc.add(FullNameChanged(state.fullname.value));
+                  },
                   label: AppLocalizations.of(context)?.signin ?? '',
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.orange,
                 ),
               ),
             ],

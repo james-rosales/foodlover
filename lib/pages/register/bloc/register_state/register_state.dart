@@ -12,5 +12,6 @@ class RegisterState with _$RegisterState {
     @Default(TextFieldInput()) TextFieldInput confirmPassword,
     @Default(TextFieldInput()) TextFieldInput fullname,
     @Default(RequestStatus.waiting) RequestStatus requestStatus,
+    @Default(true) bool obscure,
   }) = _RegisterState;
 }

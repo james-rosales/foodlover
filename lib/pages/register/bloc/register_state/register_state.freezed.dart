@@ -21,6 +21,7 @@ mixin _$RegisterState {
   TextFieldInput get confirmPassword => throw _privateConstructorUsedError;
   TextFieldInput get fullname => throw _privateConstructorUsedError;
   RequestStatus get requestStatus => throw _privateConstructorUsedError;
+  bool get obscure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RegisterStateCopyWith<RegisterState> get copyWith =>
@@ -38,7 +39,8 @@ abstract class $RegisterStateCopyWith<$Res> {
       TextFieldInput password,
       TextFieldInput confirmPassword,
       TextFieldInput fullname,
-      RequestStatus requestStatus});
+      RequestStatus requestStatus,
+      bool obscure});
 
   $TextFieldInputCopyWith<$Res> get email;
   $TextFieldInputCopyWith<$Res> get password;
@@ -64,6 +66,7 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
     Object? confirmPassword = null,
     Object? fullname = null,
     Object? requestStatus = null,
+    Object? obscure = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -86,6 +89,10 @@ class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
           ? _value.requestStatus
           : requestStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -135,7 +142,8 @@ abstract class _$$_RegisterStateCopyWith<$Res>
       TextFieldInput password,
       TextFieldInput confirmPassword,
       TextFieldInput fullname,
-      RequestStatus requestStatus});
+      RequestStatus requestStatus,
+      bool obscure});
 
   @override
   $TextFieldInputCopyWith<$Res> get email;
@@ -163,6 +171,7 @@ class __$$_RegisterStateCopyWithImpl<$Res>
     Object? confirmPassword = null,
     Object? fullname = null,
     Object? requestStatus = null,
+    Object? obscure = null,
   }) {
     return _then(_$_RegisterState(
       email: null == email
@@ -185,6 +194,10 @@ class __$$_RegisterStateCopyWithImpl<$Res>
           ? _value.requestStatus
           : requestStatus // ignore: cast_nullable_to_non_nullable
               as RequestStatus,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -197,7 +210,8 @@ class _$_RegisterState implements _RegisterState {
       this.password = const TextFieldInput(),
       this.confirmPassword = const TextFieldInput(),
       this.fullname = const TextFieldInput(),
-      this.requestStatus = RequestStatus.waiting});
+      this.requestStatus = RequestStatus.waiting,
+      this.obscure = true});
 
   @override
   @JsonKey()
@@ -214,10 +228,13 @@ class _$_RegisterState implements _RegisterState {
   @override
   @JsonKey()
   final RequestStatus requestStatus;
+  @override
+  @JsonKey()
+  final bool obscure;
 
   @override
   String toString() {
-    return 'RegisterState(email: $email, password: $password, confirmPassword: $confirmPassword, fullname: $fullname, requestStatus: $requestStatus)';
+    return 'RegisterState(email: $email, password: $password, confirmPassword: $confirmPassword, fullname: $fullname, requestStatus: $requestStatus, obscure: $obscure)';
   }
 
   @override
@@ -233,12 +250,13 @@ class _$_RegisterState implements _RegisterState {
             (identical(other.fullname, fullname) ||
                 other.fullname == fullname) &&
             (identical(other.requestStatus, requestStatus) ||
-                other.requestStatus == requestStatus));
+                other.requestStatus == requestStatus) &&
+            (identical(other.obscure, obscure) || other.obscure == obscure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, email, password, confirmPassword, fullname, requestStatus);
+  int get hashCode => Object.hash(runtimeType, email, password, confirmPassword,
+      fullname, requestStatus, obscure);
 
   @JsonKey(ignore: true)
   @override
@@ -253,7 +271,8 @@ abstract class _RegisterState implements RegisterState {
       final TextFieldInput password,
       final TextFieldInput confirmPassword,
       final TextFieldInput fullname,
-      final RequestStatus requestStatus}) = _$_RegisterState;
+      final RequestStatus requestStatus,
+      final bool obscure}) = _$_RegisterState;
 
   @override
   TextFieldInput get email;
@@ -265,6 +284,8 @@ abstract class _RegisterState implements RegisterState {
   TextFieldInput get fullname;
   @override
   RequestStatus get requestStatus;
+  @override
+  bool get obscure;
   @override
   @JsonKey(ignore: true)
   _$$_RegisterStateCopyWith<_$_RegisterState> get copyWith =>
