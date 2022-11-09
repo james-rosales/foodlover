@@ -47,18 +47,18 @@ class LoginForm extends StatelessWidget {
                 bloc.add(PasswordChanged(value));
                 value.isNotEmpty ? show = true : show = false;
               },
-              obscure: state.obscure,
+              obscure: state.password.obscure,
               label: AppLocalizations.of(context)?.password ?? '',
               suffixIcon: show
                   ? IconButton(
                       onPressed: () => bloc.add(
-                        ObscurePressed(
-                          state.obscure,
+                        LoginObscurePressed(
+                          state.password.obscure,
                         ),
                       ),
                       icon: Icon(
                         _suffixIcon(
-                          state.obscure,
+                          state.password.obscure,
                         ),
                       ),
                     )
@@ -85,7 +85,8 @@ class LoginForm extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: kToolbarHeight,
+                top: 10,
+                bottom: 15,
               ),
               child: RoundedButton(
                 onPress: () {
@@ -94,6 +95,16 @@ class LoginForm extends StatelessWidget {
                 },
                 label: AppLocalizations.of(context)?.login ?? '',
               ),
+            ),
+            const IconLabeledButton(
+              icon: FaIcon(FontAwesomeIcons.facebookF),
+              backgroundColor: Color.fromARGB(255, 85, 165, 231),
+              label: 'Login with Facebook',
+            ),
+            const IconLabeledButton(
+              icon: FaIcon(FontAwesomeIcons.google),
+              backgroundColor: Color.fromARGB(255, 230, 103, 94),
+              label: 'Login with Google',
             ),
           ],
         )),

@@ -7,7 +7,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(super.initialState) {
     on<EmailChanged>(_emailChanged);
     on<PasswordChanged>(_passwordChanged);
-    on<ObscurePressed>(_obscurePressed);
+    on<LoginObscurePressed>(_obscurePressed);
   }
 
   void _emailChanged(EmailChanged event, Emitter<LoginState> emit) {
@@ -54,11 +54,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     );
   }
 
-  void _obscurePressed(ObscurePressed event, Emitter<LoginState> emit) {
+  void _obscurePressed(LoginObscurePressed event, Emitter<LoginState> emit) {
     bool obscure = event.obscure;
 
     emit(
-      state.copyWith(
+      state.copyWith.password(
         obscure: obscure = !obscure,
       ),
     );

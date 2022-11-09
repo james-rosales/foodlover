@@ -10,6 +10,5 @@ class LoginState with _$LoginState {
     @Default(TextFieldInput()) TextFieldInput email,
     @Default(TextFieldInput()) TextFieldInput password,
     @Default(RequestStatus.waiting) RequestStatus requestStatus,
-    @Default(true) bool obscure,
   }) = _LoginState;
 }

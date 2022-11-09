@@ -14,8 +14,8 @@ class PasswordChanged extends LoginEvent {
   const PasswordChanged(this.password);
 }
 
-class ObscurePressed extends LoginEvent {
+class LoginObscurePressed extends LoginEvent {
   final bool obscure;
 
-  const ObscurePressed(this.obscure);
+  const LoginObscurePressed(this.obscure);
 }

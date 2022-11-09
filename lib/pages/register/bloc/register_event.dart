@@ -25,3 +25,15 @@ class FullNameChanged extends RegisterEvent {
 
   const FullNameChanged(this.fullname);
 }
+
+class RegisterObscurePasswordPressed extends RegisterEvent {
+  final bool obscure;
+
+  const RegisterObscurePasswordPressed(this.obscure);
+}
+
+class RegisterObscureConfirmPasswordPressed extends RegisterEvent {
+  final bool obscure;
+
+  const RegisterObscureConfirmPasswordPressed(this.obscure);
+}

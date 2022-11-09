@@ -9,6 +9,9 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     on<PasswordChanged>(_passwordChanged);
     on<ConfirmPasswordChanged>(_confirmpasswordChanged);
     on<FullNameChanged>(_fullnameChanged);
+    on<RegisterObscurePasswordPressed>(_registerobscurepasswordPressed);
+    on<RegisterObscureConfirmPasswordPressed>(
+        _registerobscureconfirmpasswordPressed);
   }
 
   void _emailChanged(EmailChanged event, Emitter<RegisterState> emit) {
@@ -100,6 +103,29 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         value: fullname,
         errorType: errorType,
         error: errorText,
+      ),
+    );
+  }
+
+  void _registerobscurepasswordPressed(
+      RegisterObscurePasswordPressed event, Emitter<RegisterState> emit) {
+    bool obscure = event.obscure;
+
+    emit(
+      state.copyWith.password(
+        obscure: obscure = !obscure,
+      ),
+    );
+  }
+
+  void _registerobscureconfirmpasswordPressed(
+      RegisterObscureConfirmPasswordPressed event,
+      Emitter<RegisterState> emit) {
+    bool obscure = event.obscure;
+
+    emit(
+      state.copyWith.confirmPassword(
+        obscure: obscure = !obscure,
       ),
     );
   }
