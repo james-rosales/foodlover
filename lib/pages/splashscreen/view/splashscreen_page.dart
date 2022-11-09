@@ -6,10 +6,20 @@ class SplashscreenPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.orange,
-      body: SingleChildScrollView(
-        child: SplashscreenForm(),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 247, 150, 5),
+              Color.fromARGB(255, 230, 204, 167),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: const SplashscreenForm(),
       ),
     );
   }
