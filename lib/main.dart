@@ -119,7 +119,7 @@ class MyApp extends StatelessWidget {
                   0.0,
                   4.0,
                 ),
-                blurRadius: 4.0,
+                blurRadius: 6.0,
                 color: Color.fromARGB(
                   25,
                   0,
@@ -141,7 +141,7 @@ class MyApp extends StatelessWidget {
                   0.0,
                   4.0,
                 ),
-                blurRadius: 4.0,
+                blurRadius: 6.0,
                 color: Color.fromARGB(
                   25,
                   0,
