@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
         tabBarTheme: TabBarTheme(
           indicator: const UnderlineTabIndicator(
             borderSide: BorderSide(
-              color: Colors.orange,
+              color: Color.fromARGB(255, 247, 169, 66),
               width: 3.0,
             ),
             insets: EdgeInsets.symmetric(
@@ -108,7 +108,7 @@ class MyApp extends StatelessWidget {
                 30,
               ),
             ),
-            backgroundColor: Colors.orangeAccent,
+            backgroundColor: const Color.fromARGB(255, 247, 169, 66),
           ),
         ),
         textTheme: const TextTheme(
