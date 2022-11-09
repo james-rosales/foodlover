@@ -25,7 +25,7 @@ class HomeAppBar extends StatelessWidget {
                 ),
                 gradient: LinearGradient(
                   colors: [
-                    Colors.white,
+                    Color.fromARGB(255, 238, 179, 83),
                     Color.fromARGB(255, 197, 197, 197),
                   ],
                   begin: Alignment.topLeft,
@@ -54,6 +54,8 @@ class HomeAppBar extends StatelessWidget {
                     onPressed: () => context.push('/welcomepage'),
                     icon: const Icon(
                       Icons.chevron_left,
+                      size: 40,
+                      color: Color.fromARGB(255, 247, 169, 66),
                     ),
                   ),
                 ),
