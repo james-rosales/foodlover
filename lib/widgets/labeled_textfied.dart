@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class LabeledTextfield extends StatelessWidget {
   final String label;
   final bool? obscure;
+  final ValueChanged onChanged;
+  final String? errorText;
 
   const LabeledTextfield({
     super.key,
     required this.label,
     this.obscure,
+    required this.onChanged,
+    this.errorText,
   });
 
   @override
@@ -28,9 +32,13 @@ class LabeledTextfield extends StatelessWidget {
             ),
           ),
           TextFormField(
+            onChanged: (value) => onChanged(
+              value,
+            ),
             obscureText: obscure ?? false,
-            decoration: const InputDecoration(
-              hintStyle: TextStyle(
+            decoration: InputDecoration(
+              errorText: errorText,
+              hintStyle: const TextStyle(
                 fontStyle: FontStyle.italic,
               ),
             ),
