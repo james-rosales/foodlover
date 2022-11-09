@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget {
               ),
             ),
             automaticallyImplyLeading: false,
-            toolbarHeight: 250,
+            toolbarHeight: 200,
             bottom: TabBar(
               onTap: (index) => bloc.add(TabPressed(index)),
               tabs: [
@@ -55,7 +55,7 @@ class HomeAppBar extends StatelessWidget {
                     icon: const Icon(
                       Icons.chevron_left,
                       size: 40,
-                      color: Color.fromARGB(255, 247, 169, 66),
+                      color: Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
                 ),
