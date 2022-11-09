@@ -50,12 +50,15 @@ class HomeAppBar extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.topLeft,
-                  child: IconButton(
-                    onPressed: () => context.push('/welcomepage'),
-                    icon: const Icon(
-                      Icons.chevron_left,
-                      size: 40,
-                      color: Color.fromARGB(255, 0, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: IconButton(
+                      onPressed: () => context.push('/welcomepage'),
+                      icon: const Icon(
+                        Icons.chevron_left,
+                        size: 40,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
                     ),
                   ),
                 ),
