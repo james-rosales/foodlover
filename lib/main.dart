@@ -112,9 +112,18 @@ class MyApp extends StatelessWidget {
           ),
         ),
         textTheme: const TextTheme(
+          caption: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontFamily: 'SF Pro',
+            fontSize: 12,
+          ),
           bodyText2: TextStyle(
-              color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 15),
+            color: Colors.grey,
+            fontWeight: FontWeight.bold,
+            fontSize: 15,
+          ),
         ),
+        scaffoldBackgroundColor: const Color.fromARGB(237, 237, 237, 237),
         fontFamily: 'SF Pro',
         primarySwatch: Colors.orange,
       ),
