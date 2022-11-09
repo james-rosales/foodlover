@@ -93,8 +93,6 @@ class LoginForm extends StatelessWidget {
                   bloc.add(PasswordChanged(state.password.value));
                 },
                 label: AppLocalizations.of(context)?.login ?? '',
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.orange,
               ),
             ),
           ],
