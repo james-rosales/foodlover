@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodbank/pages/splashscreen/splashscreen.dart';
+import 'package:foodbank/widgets/rounded_button.dart';
+
 import 'package:go_router/go_router.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SplashscreenForm extends StatelessWidget {
   const SplashscreenForm({super.key});
@@ -21,19 +23,17 @@ class SplashscreenForm extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   bottom: 15,
                 ),
-                child: SizedBox(
-                  width: 80,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(200),
-                    child: Image.asset(
-                      'assets/images/logo.jpg',
-                    ),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 40,
+                  child: Image.asset(
+                    'assets/images/logo.png',
                   ),
                 ),
               ),
-              const Text(
-                'Food for\nEveryone',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)?.title ?? '',
+                style: const TextStyle(
                   fontSize: 65,
                   color: Colors.white,
                 ),
@@ -48,9 +48,9 @@ class SplashscreenForm extends StatelessWidget {
           ),
           child: RoundedButton(
             onPress: () => context.push(
-              '/login',
+              '/home',
             ),
-            label: 'Get Started',
+            label: AppLocalizations.of(context)?.welcomebutton ?? '',
             backgroundColor: Colors.white,
             foregroundColor: Colors.orange,
           ),
