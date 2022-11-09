@@ -1,4 +1,11 @@
 {
     "welcomebutton": "Get Started",
-    "title": "Food for\nEveryone"
+    "title": "Food for\nEveryone",
+    "login": "Login",
+    "signin": "Sign up",
+    "email": "Email address",
+    "password": "Password",
+    "forgotpassword": "Forgot Password ?",
+    "confirmpassword": "Confirm Password",
+    "fullname": "Full Name"
 }
