@@ -15,5 +15,6 @@ class TextFieldInput with _$TextFieldInput {
     @Default('') String value,
     @Default(ErrorType.none) ErrorType errorType,
     @Default(null) String? error,
+    @Default(true) bool obscure,
   }) = _TextFieldInput;
 }

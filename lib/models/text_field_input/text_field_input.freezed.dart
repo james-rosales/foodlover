@@ -19,6 +19,7 @@ mixin _$TextFieldInput {
   String get value => throw _privateConstructorUsedError;
   ErrorType get errorType => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
+  bool get obscure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TextFieldInputCopyWith<TextFieldInput> get copyWith =>
@@ -31,7 +32,7 @@ abstract class $TextFieldInputCopyWith<$Res> {
           TextFieldInput value, $Res Function(TextFieldInput) then) =
       _$TextFieldInputCopyWithImpl<$Res, TextFieldInput>;
   @useResult
-  $Res call({String value, ErrorType errorType, String? error});
+  $Res call({String value, ErrorType errorType, String? error, bool obscure});
 }
 
 /// @nodoc
@@ -50,6 +51,7 @@ class _$TextFieldInputCopyWithImpl<$Res, $Val extends TextFieldInput>
     Object? value = null,
     Object? errorType = null,
     Object? error = freezed,
+    Object? obscure = null,
   }) {
     return _then(_value.copyWith(
       value: null == value
@@ -64,6 +66,10 @@ class _$TextFieldInputCopyWithImpl<$Res, $Val extends TextFieldInput>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -76,7 +82,7 @@ abstract class _$$_TextFieldInputCopyWith<$Res>
       __$$_TextFieldInputCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String value, ErrorType errorType, String? error});
+  $Res call({String value, ErrorType errorType, String? error, bool obscure});
 }
 
 /// @nodoc
@@ -93,6 +99,7 @@ class __$$_TextFieldInputCopyWithImpl<$Res>
     Object? value = null,
     Object? errorType = null,
     Object? error = freezed,
+    Object? obscure = null,
   }) {
     return _then(_$_TextFieldInput(
       value: null == value
@@ -107,6 +114,10 @@ class __$$_TextFieldInputCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String?,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -115,7 +126,10 @@ class __$$_TextFieldInputCopyWithImpl<$Res>
 
 class _$_TextFieldInput implements _TextFieldInput {
   const _$_TextFieldInput(
-      {this.value = '', this.errorType = ErrorType.none, this.error = null});
+      {this.value = '',
+      this.errorType = ErrorType.none,
+      this.error = null,
+      this.obscure = true});
 
   @override
   @JsonKey()
@@ -126,10 +140,13 @@ class _$_TextFieldInput implements _TextFieldInput {
   @override
   @JsonKey()
   final String? error;
+  @override
+  @JsonKey()
+  final bool obscure;
 
   @override
   String toString() {
-    return 'TextFieldInput(value: $value, errorType: $errorType, error: $error)';
+    return 'TextFieldInput(value: $value, errorType: $errorType, error: $error, obscure: $obscure)';
   }
 
   @override
@@ -140,11 +157,13 @@ class _$_TextFieldInput implements _TextFieldInput {
             (identical(other.value, value) || other.value == value) &&
             (identical(other.errorType, errorType) ||
                 other.errorType == errorType) &&
-            (identical(other.error, error) || other.error == error));
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.obscure, obscure) || other.obscure == obscure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value, errorType, error);
+  int get hashCode =>
+      Object.hash(runtimeType, value, errorType, error, obscure);
 
   @JsonKey(ignore: true)
   @override
@@ -157,7 +176,8 @@ abstract class _TextFieldInput implements TextFieldInput {
   const factory _TextFieldInput(
       {final String value,
       final ErrorType errorType,
-      final String? error}) = _$_TextFieldInput;
+      final String? error,
+      final bool obscure}) = _$_TextFieldInput;
 
   @override
   String get value;
@@ -165,6 +185,8 @@ abstract class _TextFieldInput implements TextFieldInput {
   ErrorType get errorType;
   @override
   String? get error;
+  @override
+  bool get obscure;
   @override
   @JsonKey(ignore: true)
   _$$_TextFieldInputCopyWith<_$_TextFieldInput> get copyWith =>
