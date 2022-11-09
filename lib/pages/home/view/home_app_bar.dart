@@ -15,9 +15,14 @@ class HomeAppBar extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             flexibleSpace: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                gradient: const LinearGradient(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(30),
+                  bottomLeft: Radius.circular(
+                    30,
+                  ),
+                ),
+                gradient: LinearGradient(
                   colors: [
                     Colors.white,
                     Color.fromARGB(255, 197, 197, 197),
