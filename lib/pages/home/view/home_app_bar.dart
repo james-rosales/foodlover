@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodbank/pages/home/bloc/bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -45,14 +46,27 @@ class HomeAppBar extends StatelessWidget {
                 ),
               ],
             ),
-            title: Center(
-              child: SizedBox(
-                width: 150,
-                height: 160,
-                child: Image.asset(
-                  'assets/images/logo.png',
+            title: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    onPressed: () => context.push('/welcomepage'),
+                    icon: const Icon(
+                      Icons.chevron_left,
+                    ),
+                  ),
                 ),
-              ),
+                Center(
+                  child: SizedBox(
+                    width: 150,
+                    height: 160,
+                    child: Image.asset(
+                      'assets/images/logo.png',
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
