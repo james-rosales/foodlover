@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
               30,
             ),
           ),
-          backgroundColor: const Color.fromARGB(255, 245, 243, 237),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
         ),
         tabBarTheme: TabBarTheme(
           indicator: const UnderlineTabIndicator(
