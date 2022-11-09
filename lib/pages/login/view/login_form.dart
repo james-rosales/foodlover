@@ -66,7 +66,7 @@ class LoginForm extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                left: 30,
+                left: 20,
                 top: 20,
               ),
               child: Align(
@@ -76,7 +76,7 @@ class LoginForm extends StatelessWidget {
                   child: Text(
                     AppLocalizations.of(context)?.forgotpassword ?? '',
                     style: const TextStyle(
-                      fontSize: 17,
+                      fontSize: 15,
                       color: Colors.orange,
                     ),
                   ),
