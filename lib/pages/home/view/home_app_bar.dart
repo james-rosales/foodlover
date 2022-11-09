@@ -14,6 +14,19 @@ class HomeAppBar extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                gradient: const LinearGradient(
+                  colors: [
+                    Colors.white,
+                    Color.fromARGB(255, 197, 197, 197),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+            ),
             automaticallyImplyLeading: false,
             toolbarHeight: 250,
             bottom: TabBar(
