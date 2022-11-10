@@ -22,7 +22,11 @@ class IconLabeledButton extends StatelessWidget {
         child: ElevatedButton.icon(
           style: ElevatedButton.styleFrom(
             backgroundColor: backgroundColor,
-            shape: const BeveledRectangleBorder(),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                30,
+              ),
+            ),
           ),
           onPressed: () {},
           icon: icon!,
