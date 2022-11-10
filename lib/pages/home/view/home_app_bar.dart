@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodbank/pages/home/bloc/bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
@@ -39,9 +40,11 @@ class HomeAppBar extends StatelessWidget {
               onTap: (index) => bloc.add(TabPressed(index)),
               tabs: [
                 Tab(
+                  icon: Icon(Icons.login),
                   text: AppLocalizations.of(context)?.login ?? '',
                 ),
                 Tab(
+                  icon: FaIcon(FontAwesomeIcons.userPlus),
                   text: AppLocalizations.of(context)?.signin ?? '',
                 ),
               ],
