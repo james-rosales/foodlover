@@ -6,6 +6,8 @@ class LabeledTextfield extends StatelessWidget {
   final ValueChanged onChanged;
   final String? errorText;
   final Widget? suffixIcon;
+  final String hintText;
+  final Widget prefixIcon;
   final VoidCallback? onPress;
 
   const LabeledTextfield({
@@ -16,6 +18,8 @@ class LabeledTextfield extends StatelessWidget {
     this.errorText,
     this.suffixIcon,
     this.onPress,
+    required this.hintText,
+    required this.prefixIcon,
   });
 
   @override
@@ -29,23 +33,16 @@ class LabeledTextfield extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            label,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
           TextFormField(
             onChanged: (value) => onChanged(
               value,
             ),
             obscureText: obscure ?? false,
             decoration: InputDecoration(
+              hintText: hintText,
+              prefixIcon: prefixIcon,
               suffixIcon: suffixIcon,
               errorText: errorText,
-              hintStyle: const TextStyle(
-                fontStyle: FontStyle.italic,
-              ),
             ),
             obscuringCharacter: '*',
             textInputAction: TextInputAction.next,
