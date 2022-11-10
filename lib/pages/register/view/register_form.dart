@@ -121,9 +121,34 @@ class RegisterForm extends StatelessWidget {
                 prefixIcon: const Icon(Icons.person),
               ),
               Padding(
+                padding: const EdgeInsets.only(left: 5.0, top: 30),
+                child: CheckboxListTile(
+                  value: false,
+                  onChanged: (value) {},
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: Row(
+                    children: [
+                      const Text('I agree with'),
+                      Expanded(
+                        child: TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Food Bank terms & Data Privacy Policy',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 247, 169, 66),
+                            ),
+                            overflow: TextOverflow.fade,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.only(
                   bottom: kToolbarHeight,
-                  top: 30,
+                  top: 0,
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(
