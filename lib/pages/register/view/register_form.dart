@@ -44,7 +44,7 @@ class RegisterForm extends StatelessWidget {
                   ),
                 ),
                 label: AppLocalizations.of(context)?.email ?? '',
-                hintText: 'Email address',
+                hintText: AppLocalizations.of(context)?.email ?? '',
                 prefixIcon: const Icon(Icons.email),
               ),
               LabeledTextfield(
@@ -75,7 +75,7 @@ class RegisterForm extends StatelessWidget {
                         ),
                       )
                     : null,
-                hintText: 'Password',
+                hintText: AppLocalizations.of(context)?.password ?? '',
                 prefixIcon: const Icon(Icons.lock),
               ),
               LabeledTextfield(
@@ -106,7 +106,7 @@ class RegisterForm extends StatelessWidget {
                         ),
                       )
                     : null,
-                hintText: 'Confirm Password',
+                hintText: AppLocalizations.of(context)?.confirmpassword ?? '',
                 prefixIcon: const Icon(Icons.lock),
               ),
               LabeledTextfield(
@@ -117,34 +117,35 @@ class RegisterForm extends StatelessWidget {
                   ),
                 ),
                 label: AppLocalizations.of(context)?.fullname ?? '',
-                hintText: 'Full name',
+                hintText: AppLocalizations.of(context)?.fullname ?? '',
                 prefixIcon: const Icon(Icons.person),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 5.0, top: 30),
-                child: CheckboxListTile(
-                  value: false,
-                  onChanged: (value) {},
-                  controlAffinity: ListTileControlAffinity.leading,
-                  title: Row(
-                    children: [
-                      const Text('I agree with'),
-                      Expanded(
-                        child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Food Bank terms & Data Privacy Policy',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 247, 169, 66),
-                            ),
-                            overflow: TextOverflow.fade,
-                          ),
-                        ),
-                      ),
-                    ],
+                  padding: const EdgeInsets.only(
+                    left: 5.0,
+                    top: 30,
+                    right: 5,
                   ),
-                ),
-              ),
+                  child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Checkbox(value: false, onChanged: (value) {}),
+                      label: Row(
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)?.agree ?? '',
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              AppLocalizations.of(context)?.termsprivacy ?? '',
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 247, 169, 66),
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ))),
               Padding(
                 padding: const EdgeInsets.only(
                   bottom: kToolbarHeight,
