@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodbank/pages/home/bloc/bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:go_router/go_router.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -34,41 +33,27 @@ class HomeAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            automaticallyImplyLeading: false,
+            leadingWidth: 20,
             toolbarHeight: 200,
             bottom: TabBar(
               onTap: (index) => bloc.add(TabPressed(index)),
               tabs: [
                 Tab(
-                  icon: Icon(Icons.login),
+                  icon: const Icon(Icons.login),
                   text: AppLocalizations.of(context)?.login ?? '',
                 ),
                 Tab(
-                  icon: FaIcon(FontAwesomeIcons.userPlus),
+                  icon: const FaIcon(FontAwesomeIcons.userPlus),
                   text: AppLocalizations.of(context)?.signin ?? '',
                 ),
               ],
             ),
             title: Column(
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: IconButton(
-                      onPressed: () => context.push('/welcomepage'),
-                      icon: const Icon(
-                        Icons.chevron_left,
-                        size: 40,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                  ),
-                ),
                 Center(
                   child: SizedBox(
                     width: 150,
-                    height: 160,
+                    height: 150,
                     child: Image.asset(
                       'assets/images/logo.png',
                     ),
