@@ -57,6 +57,28 @@ class MyApp extends StatelessWidget {
       routerConfig: _router,
       title: 'Food Bank',
       theme: ThemeData(
+        progressIndicatorTheme: const ProgressIndicatorThemeData(
+          color: Color.fromARGB(
+            255,
+            247,
+            169,
+            66,
+          ),
+        ),
+        dialogTheme: DialogTheme(
+            titleTextStyle: const TextStyle(
+              fontFamily: 'SF Pro',
+              color: Color.fromARGB(
+                255,
+                247,
+                169,
+                66,
+              ),
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20))),
         appBarTheme: AppBarTheme(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
@@ -87,7 +109,8 @@ class MyApp extends StatelessWidget {
             textStyle: MaterialStateProperty.all(
               const TextStyle(
                 fontFamily: 'SF Pro',
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.bold,
+                fontSize: 14,
                 color: Color.fromARGB(255, 247, 169, 66),
               ),
             ),
