@@ -44,6 +44,8 @@ class RegisterForm extends StatelessWidget {
                   ),
                 ),
                 label: AppLocalizations.of(context)?.email ?? '',
+                hintText: 'Email address',
+                prefixIcon: const Icon(Icons.email),
               ),
               LabeledTextfield(
                 errorText: state.password.error,
@@ -73,6 +75,8 @@ class RegisterForm extends StatelessWidget {
                         ),
                       )
                     : null,
+                hintText: 'Password',
+                prefixIcon: const Icon(Icons.lock),
               ),
               LabeledTextfield(
                 errorText: state.confirmPassword.error,
@@ -102,6 +106,8 @@ class RegisterForm extends StatelessWidget {
                         ),
                       )
                     : null,
+                hintText: 'Confirm Password',
+                prefixIcon: const Icon(Icons.lock),
               ),
               LabeledTextfield(
                 errorText: state.fullname.error,
@@ -111,6 +117,8 @@ class RegisterForm extends StatelessWidget {
                   ),
                 ),
                 label: AppLocalizations.of(context)?.fullname ?? '',
+                hintText: 'Full name',
+                prefixIcon: const Icon(Icons.person),
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -131,6 +139,9 @@ class RegisterForm extends StatelessWidget {
                       bloc.add(FullNameChanged(state.fullname.value));
                     },
                     label: AppLocalizations.of(context)?.signin ?? '',
+                    height: 70,
+                    width: 314,
+                    radius: 30,
                   ),
                 ),
               ),
