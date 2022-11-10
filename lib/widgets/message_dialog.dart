@@ -13,7 +13,6 @@ class MessageDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       title: Padding(
         padding: const EdgeInsets.only(bottom: 20.0),
         child: Text(
