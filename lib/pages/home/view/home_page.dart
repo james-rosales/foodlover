@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
       child: const Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(
-            150,
+            180,
           ),
           child: HomeAppBar(),
         ),
