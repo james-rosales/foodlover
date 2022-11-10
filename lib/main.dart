@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
               const TextStyle(
                 fontFamily: 'SF Pro',
                 fontWeight: FontWeight.bold,
-                color: Colors.orange,
+                color: Color.fromARGB(255, 247, 169, 66),
               ),
             ),
             foregroundColor: MaterialStateProperty.all(
