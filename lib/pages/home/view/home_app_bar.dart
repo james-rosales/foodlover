@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget {
               ),
             ),
             leadingWidth: 20,
-            toolbarHeight: 200,
+            toolbarHeight: 150,
             bottom: TabBar(
               onTap: (index) => bloc.add(TabPressed(index)),
               tabs: [
