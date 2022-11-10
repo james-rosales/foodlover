@@ -136,21 +136,6 @@ class MyApp extends StatelessWidget {
             fontSize: 12,
           ),
           bodyText2: TextStyle(
-            shadows: <Shadow>[
-              Shadow(
-                offset: Offset(
-                  0.0,
-                  4.0,
-                ),
-                blurRadius: 6.0,
-                color: Color.fromARGB(
-                  25,
-                  0,
-                  0,
-                  0,
-                ),
-              ),
-            ],
             color: Colors.grey,
             fontWeight: FontWeight.bold,
             fontSize: 15,

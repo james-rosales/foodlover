@@ -7,5 +7,7 @@
     "password": "Password",
     "forgotpassword": "Forgot Password ?",
     "confirmpassword": "Confirm Password",
-    "fullname": "Full Name"
+    "fullname": "Full Name",
+    "logginIn": "Logging In",
+    "pleasewait": "Please wait..."
 }

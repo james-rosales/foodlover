@@ -5,12 +5,19 @@ class RoundedButton extends StatelessWidget {
   final String label;
   final Color? backgroundColor;
   final Color? foregroundColor;
+  final double width;
+  final double height;
+  final double radius;
+
   const RoundedButton(
       {super.key,
       this.onPress,
       required this.label,
       this.backgroundColor,
-      this.foregroundColor});
+      this.foregroundColor,
+      required this.width,
+      required this.height,
+      required this.radius});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +27,15 @@ class RoundedButton extends StatelessWidget {
         right: 30,
       ),
       child: SizedBox(
-        width: 314,
-        height: 70,
+        width: width,
+        height: height,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                radius,
+              ),
+            ),
             backgroundColor: backgroundColor,
             foregroundColor: foregroundColor,
           ),
