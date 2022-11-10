@@ -52,7 +52,7 @@ class SplashscreenForm extends StatelessWidget {
             ),
             label: AppLocalizations.of(context)?.welcomebutton ?? '',
             backgroundColor: Colors.white,
-            foregroundColor: Colors.orange,
+            foregroundColor: const Color.fromARGB(255, 238, 142, 8),
             height: 70,
             width: 314,
             radius: 30,

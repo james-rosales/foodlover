@@ -12,7 +12,7 @@ class SplashscreenPage extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 238, 179, 83),
+              Color.fromARGB(255, 238, 142, 8),
               Color.fromARGB(255, 197, 197, 197),
             ],
             begin: Alignment.topLeft,

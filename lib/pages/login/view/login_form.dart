@@ -54,7 +54,8 @@ class LoginForm extends StatelessWidget {
         );
         break;
       case RequestStatus.success:
-        // context.push('/register');
+        context.push('/dashboard');
+
         break;
       case RequestStatus.failure:
         showDialog(

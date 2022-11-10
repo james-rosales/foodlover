@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foodbank/pages/dashboard/dashboard.dart';
 import 'package:foodbank/pages/home/view/view.dart';
 import 'package:foodbank/pages/login/login.dart';
 import 'package:foodbank/pages/register/view/register_page.dart';
+import 'package:foodbank/pages/splashscreen/view/splashscreen_page.dart';
 import 'package:go_router/go_router.dart';
-import 'pages/splashscreen/view/view.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -41,6 +42,12 @@ final GoRouter _router = GoRouter(
       path: '/register',
       builder: (BuildContext context, GoRouterState state) {
         return const RegisterPage();
+      },
+    ),
+    GoRoute(
+      path: '/dashboard',
+      builder: (BuildContext context, GoRouterState state) {
+        return const DashboardPage();
       },
     ),
   ],
@@ -85,10 +92,10 @@ class MyApp extends StatelessWidget {
               30,
             ),
           ),
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(237, 237, 237, 237),
         ),
         tabBarTheme: TabBarTheme(
-          labelColor: const Color.fromARGB(255, 90, 55, 1),
+          labelColor: const Color.fromARGB(255, 222, 145, 29),
           indicator: const UnderlineTabIndicator(
             borderSide: BorderSide(
               color: Color.fromARGB(255, 247, 169, 66),
@@ -109,7 +116,7 @@ class MyApp extends StatelessWidget {
             textStyle: MaterialStateProperty.all(
               const TextStyle(
                 fontFamily: 'SF Pro',
-                // fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold,
                 fontSize: 14,
                 color: Color.fromARGB(255, 247, 169, 66),
               ),
@@ -164,7 +171,7 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        scaffoldBackgroundColor: const Color.fromARGB(237, 237, 237, 237),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 216, 216, 216),
         fontFamily: 'SF Pro',
         primarySwatch: Colors.orange,
       ),

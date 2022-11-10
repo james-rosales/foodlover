@@ -139,7 +139,7 @@ class RegisterForm extends StatelessWidget {
                             child: Text(
                               AppLocalizations.of(context)?.termsprivacy ?? '',
                               style: const TextStyle(
-                                color: Color.fromARGB(255, 247, 169, 66),
+                                color: Color.fromARGB(255, 238, 142, 8),
                                 fontWeight: FontWeight.w900,
                               ),
                             ),

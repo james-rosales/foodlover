@@ -74,16 +74,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(
       requestStatus: RequestStatus.waiting,
     ));
-    if (state.email.value == email && state.password.value == password) {
-      emit(
-        state.copyWith(
-          requestStatus: RequestStatus.inProgress,
-        ),
-      );
-      emit(state.copyWith(
-        requestStatus: RequestStatus.waiting,
-      ));
-    } else {
+    if (state.email.value != email && state.password.value != password) {
       emit(
         state.copyWith(
           requestStatus: RequestStatus.failure,
@@ -92,6 +83,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(state.copyWith(
         requestStatus: RequestStatus.waiting,
       ));
+    } else {
+      emit(
+        state.copyWith(
+          requestStatus: RequestStatus.inProgress,
+        ),
+      );
+
       await Future.delayed(const Duration(seconds: 3));
       emit(
         state.copyWith(
