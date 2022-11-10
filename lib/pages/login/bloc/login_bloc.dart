@@ -1,3 +1,4 @@
+import 'package:foodbank/models/result/result.dart';
 import 'package:foodbank/models/text_field_input/text_field_input.dart';
 
 import 'bloc.dart';
@@ -8,6 +9,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<EmailChanged>(_emailChanged);
     on<PasswordChanged>(_passwordChanged);
     on<LoginObscurePressed>(_obscurePressed);
+    on<LoginPressed>(_loginPressed);
   }
 
   void _emailChanged(EmailChanged event, Emitter<LoginState> emit) {
@@ -62,5 +64,30 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         obscure: obscure = !obscure,
       ),
     );
+  }
+
+  Future<void> _loginPressed(
+      LoginPressed event, Emitter<LoginState> emit) async {
+    String email = 'admin@yahoo.com';
+    String password = '123456';
+
+    emit(state.copyWith(
+      requestStatus: RequestStatus.waiting,
+    ));
+    if (state.email.value != email && state.password.value != password) {
+      emit(
+        state.copyWith(
+          requestStatus: RequestStatus.failure,
+        ),
+      );
+    } else {
+      emit(state.copyWith(
+        requestStatus: RequestStatus.inProgress,
+      ));
+      await Future.delayed(const Duration(seconds: 3));
+      emit(state.copyWith(
+        requestStatus: RequestStatus.success,
+      ));
+    }
   }
 }

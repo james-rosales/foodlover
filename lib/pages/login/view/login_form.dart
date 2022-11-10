@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:foodbank/models/result/result.dart';
 
 import 'package:foodbank/pages/login/login.dart';
 import 'package:foodbank/widgets/labeled_textfied.dart';
+import 'package:foodbank/widgets/message_dialog.dart';
 import 'package:foodbank/widgets/rounded_button.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,91 +25,188 @@ class LoginForm extends StatelessWidget {
 
   late final TextEditingController passwordcontroller = TextEditingController();
 
+  void listener(BuildContext context, LoginState state) {
+    switch (state.requestStatus) {
+      case RequestStatus.inProgress:
+        showDialog(
+          barrierDismissible: false,
+          useRootNavigator: false,
+          context: context,
+          builder: (BuildContext context) {
+            return MessageDialog(
+              title: AppLocalizations.of(context)?.logginIn ?? '',
+              content: Column(
+                children: [
+                  const CircularProgressIndicator(
+                    color: Colors.orange,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50.0),
+                    child: Text(
+                      AppLocalizations.of(context)?.pleasewait ?? '',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+        break;
+      case RequestStatus.success:
+        // context.push('/register');
+        break;
+      case RequestStatus.failure:
+        break;
+      default:
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var bloc = context.read<LoginBloc>();
     return BlocBuilder<LoginBloc, LoginState>(builder: (context, state) {
-      return Scaffold(
-        backgroundColor: const Color.fromARGB(105, 232, 230, 230),
-        body: SingleChildScrollView(
+      return BlocListener<LoginBloc, LoginState>(
+        listener: (context, state) => listener(
+          context,
+          state,
+        ),
+        child: Scaffold(
+          backgroundColor: const Color.fromARGB(105, 232, 230, 230),
+          body: SingleChildScrollView(
             child: Column(
-          children: [
-            LabeledTextfield(
-              errorText: state.email.error,
-              onChanged: (value) => bloc.add(
-                EmailChanged(
-                  value,
+              children: [
+                LabeledTextfield(
+                  errorText: state.email.error,
+                  onChanged: (value) => bloc.add(
+                    EmailChanged(
+                      value,
+                    ),
+                  ),
+                  label: AppLocalizations.of(context)?.email ?? '',
+                  hintText: 'Email address',
+                  prefixIcon: const Icon(Icons.email),
                 ),
-              ),
-              label: AppLocalizations.of(context)?.email ?? '',
-            ),
-            LabeledTextfield(
-              errorText: state.password.error,
-              onChanged: (value) {
-                bloc.add(PasswordChanged(value));
-                value.isNotEmpty ? show = true : show = false;
-              },
-              obscure: state.password.obscure,
-              label: AppLocalizations.of(context)?.password ?? '',
-              suffixIcon: show
-                  ? IconButton(
-                      onPressed: () => bloc.add(
-                        LoginObscurePressed(
-                          state.password.obscure,
+                LabeledTextfield(
+                  errorText: state.password.error,
+                  onChanged: (value) {
+                    bloc.add(PasswordChanged(value));
+                    value.isNotEmpty ? show = true : show = false;
+                  },
+                  obscure: state.password.obscure,
+                  label: AppLocalizations.of(context)?.password ?? '',
+                  suffixIcon: show
+                      ? IconButton(
+                          onPressed: () => bloc.add(
+                            LoginObscurePressed(
+                              state.password.obscure,
+                            ),
+                          ),
+                          icon: Icon(
+                            _suffixIcon(
+                              state.password.obscure,
+                            ),
+                          ),
+                        )
+                      : null,
+                  hintText: 'Password',
+                  prefixIcon: const Icon(Icons.lock),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    top: 20,
+                  ),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton(
+                      onPressed: () => {},
+                      child: Text(
+                        AppLocalizations.of(context)?.forgotpassword ?? '',
+                        style: const TextStyle(
+                          fontSize: 15,
+                          color: Color.fromARGB(255, 247, 169, 66),
                         ),
                       ),
-                      icon: Icon(
-                        _suffixIcon(
-                          state.password.obscure,
-                        ),
-                      ),
-                    )
-                  : null,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 20,
-                top: 20,
-              ),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: () => {},
-                  child: Text(
-                    AppLocalizations.of(context)?.forgotpassword ?? '',
-                    style: const TextStyle(
-                      fontSize: 15,
-                      color: Colors.orange,
                     ),
                   ),
                 ),
-              ),
+                RoundedButton(
+                  onPress: () {
+                    bloc.add(EmailChanged(state.email.value));
+                    bloc.add(PasswordChanged(state.password.value));
+                    bloc.add(const LoginPressed());
+                  },
+                  label: AppLocalizations.of(context)?.login ?? '',
+                  height: 70,
+                  width: 314,
+                  radius: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 5,
+                    right: 5,
+                    top: 20,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                              margin: const EdgeInsets.only(
+                                right: 10.0,
+                              ),
+                              child: const Divider()),
+                        ),
+                        const Text("OR SIGN IN USING"),
+                        Expanded(
+                          child: Container(
+                              margin: const EdgeInsets.only(
+                                left: 10.0,
+                              ),
+                              child: const Divider()),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    IconLabeledButton(
+                      icon: FaIcon(FontAwesomeIcons.facebookF),
+                      backgroundColor: Color.fromARGB(255, 85, 165, 231),
+                      label: 'Facebook',
+                      height: 50,
+                      width: 150,
+                    ),
+                    IconLabeledButton(
+                      icon: FaIcon(FontAwesomeIcons.google),
+                      backgroundColor: Color.fromARGB(255, 230, 103, 94),
+                      label: 'Google',
+                      height: 50,
+                      width: 150,
+                    ),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    bottom: 30,
+                    top: 20,
+                  ),
+                  child: RoundedButton(
+                    backgroundColor: Color.fromARGB(255, 151, 150, 150),
+                    label: 'Login with SMS',
+                    height: 50,
+                    width: double.infinity,
+                    radius: 5,
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                top: 10,
-                bottom: 15,
-              ),
-              child: RoundedButton(
-                onPress: () {
-                  bloc.add(EmailChanged(state.email.value));
-                  bloc.add(PasswordChanged(state.password.value));
-                },
-                label: AppLocalizations.of(context)?.login ?? '',
-              ),
-            ),
-            const IconLabeledButton(
-              icon: FaIcon(FontAwesomeIcons.facebookF),
-              backgroundColor: Color.fromARGB(255, 85, 165, 231),
-              label: 'Login with Facebook',
-            ),
-            const IconLabeledButton(
-              icon: FaIcon(FontAwesomeIcons.google),
-              backgroundColor: Color.fromARGB(255, 230, 103, 94),
-              label: 'Login with Google',
-            ),
-          ],
-        )),
+          ),
+        ),
       );
     });
   }

@@ -19,3 +19,7 @@ class LoginObscurePressed extends LoginEvent {
 
   const LoginObscurePressed(this.obscure);
 }
+
+class LoginPressed extends LoginEvent {
+  const LoginPressed();
+}
