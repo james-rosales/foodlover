@@ -66,6 +66,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         ),
         tabBarTheme: TabBarTheme(
+          labelColor: const Color.fromARGB(255, 90, 55, 1),
           indicator: const UnderlineTabIndicator(
             borderSide: BorderSide(
               color: Color.fromARGB(255, 247, 169, 66),
