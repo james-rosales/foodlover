@@ -43,9 +43,12 @@ class DashboardBottomBar extends StatelessWidget {
           ),
         ],
         currentIndex: state.currentTab.index,
-        onTap: (index) => bloc.add(DashboardTabPressed(index)),
+        onTap: (index) {
+          bloc.add(DashboardTabPressed(index));
+          bloc.add(const DashboardTabChanged());
+        },
         selectedItemColor: const Color.fromARGB(255, 222, 145, 29),
-        unselectedItemColor: Color.fromARGB(255, 191, 191, 190),
+        unselectedItemColor: const Color.fromARGB(255, 191, 191, 190),
       );
     });
   }

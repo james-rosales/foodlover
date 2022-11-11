@@ -75,9 +75,9 @@ class DashboardDrawer extends StatelessWidget {
                 iCon: FontAwesomeIcons.shieldHalved,
               ),
             ),
-            ListTile(
+            const ListTile(
               title: IconTextButton(
-                onPressed: () => context.push('/home'),
+                // onPressed: () => context.go('/home'),
                 label: 'Sign out',
                 iCon: FontAwesomeIcons.rightFromBracket,
               ),

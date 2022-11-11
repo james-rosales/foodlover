@@ -83,12 +83,7 @@ class MyApp extends StatelessWidget {
               ],
             )),
         progressIndicatorTheme: const ProgressIndicatorThemeData(
-          color: Color.fromARGB(
-            255,
-            247,
-            169,
-            66,
-          ),
+          color: Color.fromARGB(255, 223, 169, 237),
         ),
         dialogTheme: DialogTheme(
             titleTextStyle: const TextStyle(
@@ -110,13 +105,13 @@ class MyApp extends StatelessWidget {
               30,
             ),
           ),
-          backgroundColor: Color.fromARGB(255, 247, 246, 246),
+          backgroundColor: const Color.fromARGB(255, 247, 246, 246),
         ),
         tabBarTheme: TabBarTheme(
           labelColor: const Color.fromARGB(169, 0, 0, 0),
           indicator: const UnderlineTabIndicator(
             borderSide: BorderSide(
-              color: Color.fromARGB(255, 247, 169, 66),
+              color: Color.fromARGB(255, 240, 109, 109),
               width: 3.0,
             ),
             insets: EdgeInsets.symmetric(
@@ -135,7 +130,7 @@ class MyApp extends StatelessWidget {
               const TextStyle(
                 fontFamily: 'SF Pro',
                 fontWeight: FontWeight.bold,
-                fontSize: 14,
+                fontSize: 15,
                 color: Color.fromARGB(255, 247, 169, 66),
               ),
             ),
@@ -189,7 +184,7 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        scaffoldBackgroundColor: Color.fromARGB(255, 247, 246, 246),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 247, 246, 246),
         fontFamily: 'SF Pro',
         primarySwatch: Colors.orange,
       ),

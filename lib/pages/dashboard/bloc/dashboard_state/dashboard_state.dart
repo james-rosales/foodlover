@@ -13,5 +13,7 @@ enum Tabs {
 class DashboardState with _$DashboardState {
   factory DashboardState({
     @Default(Tabs.menus) Tabs currentTab,
+    @Default('Food Bank') String title,
+    @Default(60) double height,
   }) = _DashboardState;
 }

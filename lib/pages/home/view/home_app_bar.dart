@@ -14,7 +14,7 @@ class HomeAppBar extends StatelessWidget {
       return DefaultTabController(
         length: 2,
         child: Scaffold(
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
           appBar: AppBar(
             flexibleSpace: Container(
               decoration: const BoxDecoration(
@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget {
                 ),
               ),
             ),
-            leadingWidth: 30,
+            leadingWidth: 40,
             toolbarHeight: 180,
             bottom: TabBar(
               onTap: (index) => bloc.add(TabPressed(index)),
@@ -52,11 +52,18 @@ class HomeAppBar extends StatelessWidget {
             title: Column(
               children: [
                 Center(
-                  child: SizedBox(
-                    width: 150,
-                    height: 150,
-                    child: Image.asset(
-                      'assets/images/logo.png',
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 30),
+                    child: SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 40,
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                        ),
+                      ),
                     ),
                   ),
                 ),

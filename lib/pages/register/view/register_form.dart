@@ -32,7 +32,7 @@ class RegisterForm extends StatelessWidget {
     var bloc = context.read<RegisterBloc>();
     return BlocBuilder<RegisterBloc, RegisterState>(builder: (context, state) {
       return Scaffold(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -131,16 +131,23 @@ class RegisterForm extends StatelessWidget {
                       icon: Checkbox(value: false, onChanged: (value) {}),
                       label: Row(
                         children: [
-                          Text(
-                            AppLocalizations.of(context)?.agree ?? '',
-                          ),
-                          TextButton(
-                            onPressed: () {},
+                          Expanded(
+                            flex: 1,
                             child: Text(
-                              AppLocalizations.of(context)?.termsprivacy ?? '',
-                              style: const TextStyle(
-                                color: Color.fromARGB(255, 238, 142, 8),
-                                fontWeight: FontWeight.w900,
+                              AppLocalizations.of(context)?.agree ?? '',
+                            ),
+                          ),
+                          Expanded(
+                            flex: 5,
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                AppLocalizations.of(context)?.termsprivacy ??
+                                    '',
+                                style: const TextStyle(
+                                  color: Color.fromARGB(255, 238, 142, 8),
+                                  fontWeight: FontWeight.w900,
+                                ),
                               ),
                             ),
                           ),

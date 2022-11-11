@@ -7,10 +7,7 @@ class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: HistoryAppBar(),
-      ),
+      body: HistoryForm(),
     );
   }
 }

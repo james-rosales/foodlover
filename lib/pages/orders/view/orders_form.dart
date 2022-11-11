@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HistoryForm extends StatelessWidget {
-  const HistoryForm({super.key});
+class OrdersForm extends StatelessWidget {
+  const OrdersForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class HistoryForm extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: const [
         Icon(
-          Icons.event_note_outlined,
+          Icons.shopping_cart_outlined,
           size: 120,
           color: Color.fromARGB(199, 199, 199, 199),
         ),
@@ -18,7 +18,7 @@ class HistoryForm extends StatelessWidget {
           height: 20,
         ),
         Text(
-          'No history yet',
+          'No orders yet',
           style: TextStyle(
             fontSize: 33,
             color: Colors.black,

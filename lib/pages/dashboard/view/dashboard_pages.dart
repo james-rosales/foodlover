@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodbank/pages/dashboard/dashboard.dart';
 import 'package:foodbank/pages/history/history.dart';
-import 'package:foodbank/pages/login/login.dart';
 import 'package:foodbank/pages/menu/menu.dart';
+import 'package:foodbank/pages/orders/view/view.dart';
 import 'package:foodbank/pages/register/register.dart';
-import 'package:go_router/go_router.dart';
 
 class DashboardPages extends StatelessWidget {
   const DashboardPages({super.key});
@@ -25,7 +24,7 @@ class DashboardPages extends StatelessWidget {
         controller: pageController,
         children: const [
           MenuPage(),
-          LoginPage(),
+          OrdersPage(),
           RegisterPage(),
           HistoryPage(),
         ],

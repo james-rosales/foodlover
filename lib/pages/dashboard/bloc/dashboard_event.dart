@@ -7,3 +7,7 @@ class DashboardTabPressed extends DashboardEvent {
 
   const DashboardTabPressed(this.page);
 }
+
+class DashboardTabChanged extends DashboardEvent {
+  const DashboardTabChanged();
+}

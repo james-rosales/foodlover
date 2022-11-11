@@ -55,7 +55,7 @@ class MenuCategories extends StatelessWidget {
             ),
           ),
         ),
-        body: MenuCategoriesPages(),
+        body: const MenuCategoriesPages(),
       );
     });
   }

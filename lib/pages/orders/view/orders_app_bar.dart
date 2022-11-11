@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HistoryAppBar extends StatelessWidget {
-  const HistoryAppBar({super.key});
+class OrdersAppBar extends StatelessWidget {
+  const OrdersAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

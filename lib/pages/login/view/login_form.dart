@@ -142,11 +142,11 @@ class LoginForm extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  left: 20,
-                  top: 20,
+                  bottom: 20,
+                  right: 20,
                 ),
                 child: Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () => {},
                     child: Text(
@@ -183,7 +183,7 @@ class LoginForm extends StatelessWidget {
                       Expanded(
                         child: Container(
                           margin: const EdgeInsets.only(
-                            left: 5,
+                            left: 30,
                             right: 10.0,
                           ),
                           child: const Divider(
@@ -194,7 +194,7 @@ class LoginForm extends StatelessWidget {
                       Text(AppLocalizations.of(context)?.othersignin ?? ''),
                       Expanded(
                         child: Container(
-                          margin: const EdgeInsets.only(left: 10.0, right: 5),
+                          margin: const EdgeInsets.only(left: 10.0, right: 30),
                           child: const Divider(
                             thickness: 2,
                           ),
@@ -204,36 +204,35 @@ class LoginForm extends StatelessWidget {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconLabeledButton(
-                    icon: const FaIcon(FontAwesomeIcons.facebookF),
-                    backgroundColor: const Color.fromARGB(255, 85, 165, 231),
-                    label: AppLocalizations.of(context)?.facebook ?? '',
-                    height: 50,
-                    width: 150,
-                  ),
-                  IconLabeledButton(
-                    icon: const FaIcon(FontAwesomeIcons.google),
-                    backgroundColor: const Color.fromARGB(255, 230, 103, 94),
-                    label: AppLocalizations.of(context)?.google ?? '',
-                    height: 50,
-                    width: 150,
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/facebook.png',
+                      width: 90,
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Image.asset(
+                      'assets/images/google.png',
+                      width: 50,
+                    ),
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
                   bottom: kToolbarHeight,
                   top: 20,
                 ),
-                child: RoundedButton(
-                  backgroundColor: const Color.fromARGB(255, 151, 150, 150),
-                  label: AppLocalizations.of(context)?.sms ?? '',
-                  height: 50,
-                  width: double.infinity,
-                  radius: 5,
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Login with SMS',
+                  ),
                 ),
               ),
             ],

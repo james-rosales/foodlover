@@ -11,16 +11,19 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<DashboardBloc>(
         create: (context) => DashboardBloc(DashboardState()),
-        child: const Scaffold(
-          bottomNavigationBar: DashboardBottomBar(),
-          drawer: DashboardDrawer(),
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(
-              60,
+        child: BlocBuilder<DashboardBloc, DashboardState>(
+            builder: (context, state) {
+          return Scaffold(
+            bottomNavigationBar: const DashboardBottomBar(),
+            drawer: const DashboardDrawer(),
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(
+                state.height,
+              ),
+              child: const DashboardAppBar(),
             ),
-            child: DashboardAppBar(),
-          ),
-          body: DashboardPages(),
-        ));
+            body: const DashboardPages(),
+          );
+        }));
   }
 }

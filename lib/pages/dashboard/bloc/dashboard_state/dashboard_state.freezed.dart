@@ -17,6 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$DashboardState {
   Tabs get currentTab => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  double get height => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DashboardStateCopyWith<DashboardState> get copyWith =>
@@ -29,7 +31,7 @@ abstract class $DashboardStateCopyWith<$Res> {
           DashboardState value, $Res Function(DashboardState) then) =
       _$DashboardStateCopyWithImpl<$Res, DashboardState>;
   @useResult
-  $Res call({Tabs currentTab});
+  $Res call({Tabs currentTab, String title, double height});
 }
 
 /// @nodoc
@@ -46,12 +48,22 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
   @override
   $Res call({
     Object? currentTab = null,
+    Object? title = null,
+    Object? height = null,
   }) {
     return _then(_value.copyWith(
       currentTab: null == currentTab
           ? _value.currentTab
           : currentTab // ignore: cast_nullable_to_non_nullable
               as Tabs,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -64,7 +76,7 @@ abstract class _$$_DashboardStateCopyWith<$Res>
       __$$_DashboardStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Tabs currentTab});
+  $Res call({Tabs currentTab, String title, double height});
 }
 
 /// @nodoc
@@ -79,12 +91,22 @@ class __$$_DashboardStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentTab = null,
+    Object? title = null,
+    Object? height = null,
   }) {
     return _then(_$_DashboardState(
       currentTab: null == currentTab
           ? _value.currentTab
           : currentTab // ignore: cast_nullable_to_non_nullable
               as Tabs,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: null == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -92,15 +114,24 @@ class __$$_DashboardStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DashboardState implements _DashboardState {
-  _$_DashboardState({this.currentTab = Tabs.menus});
+  _$_DashboardState(
+      {this.currentTab = Tabs.menus,
+      this.title = 'Food Bank',
+      this.height = 60});
 
   @override
   @JsonKey()
   final Tabs currentTab;
+  @override
+  @JsonKey()
+  final String title;
+  @override
+  @JsonKey()
+  final double height;
 
   @override
   String toString() {
-    return 'DashboardState(currentTab: $currentTab)';
+    return 'DashboardState(currentTab: $currentTab, title: $title, height: $height)';
   }
 
   @override
@@ -109,11 +140,13 @@ class _$_DashboardState implements _DashboardState {
         (other.runtimeType == runtimeType &&
             other is _$_DashboardState &&
             (identical(other.currentTab, currentTab) ||
-                other.currentTab == currentTab));
+                other.currentTab == currentTab) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.height, height) || other.height == height));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentTab);
+  int get hashCode => Object.hash(runtimeType, currentTab, title, height);
 
   @JsonKey(ignore: true)
   @override
@@ -123,10 +156,17 @@ class _$_DashboardState implements _DashboardState {
 }
 
 abstract class _DashboardState implements DashboardState {
-  factory _DashboardState({final Tabs currentTab}) = _$_DashboardState;
+  factory _DashboardState(
+      {final Tabs currentTab,
+      final String title,
+      final double height}) = _$_DashboardState;
 
   @override
   Tabs get currentTab;
+  @override
+  String get title;
+  @override
+  double get height;
   @override
   @JsonKey(ignore: true)
   _$$_DashboardStateCopyWith<_$_DashboardState> get copyWith =>
