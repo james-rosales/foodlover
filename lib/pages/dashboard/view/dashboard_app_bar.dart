@@ -17,7 +17,7 @@ class DashboardAppBar extends StatelessWidget {
             ),
           ),
         ],
-        backgroundColor: const Color.fromARGB(255, 216, 216, 216),
+        backgroundColor: const Color.fromARGB(255, 254, 253, 253),
         shape: const BeveledRectangleBorder(),
         title: const Text('Food Bank'),
       ),

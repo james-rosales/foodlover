@@ -25,8 +25,8 @@ class HomeAppBar extends StatelessWidget {
                 ),
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 238, 179, 83),
-                    Color.fromARGB(255, 197, 197, 197),
+                    Color.fromARGB(255, 237, 172, 81),
+                    Color.fromARGB(255, 242, 159, 159),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,

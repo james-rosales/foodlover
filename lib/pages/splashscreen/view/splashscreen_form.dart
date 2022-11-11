@@ -43,19 +43,20 @@ class SplashscreenForm extends StatelessWidget {
         ),
         Image.asset('assets/images/screen-picture.png'),
         Padding(
-          padding: const EdgeInsets.only(
-            top: kToolbarHeight,
-          ),
-          child: RoundedButton(
-            onPress: () => context.push(
-              '/home',
+          padding: const EdgeInsets.only(top: kToolbarHeight),
+          child: Align(
+            alignment: FractionalOffset.bottomCenter,
+            child: RoundedButton(
+              onPress: () => context.push(
+                '/home',
+              ),
+              label: AppLocalizations.of(context)?.welcomebutton ?? '',
+              backgroundColor: Colors.white,
+              foregroundColor: const Color.fromARGB(255, 238, 142, 8),
+              height: 70,
+              width: 314,
+              radius: 30,
             ),
-            label: AppLocalizations.of(context)?.welcomebutton ?? '',
-            backgroundColor: Colors.white,
-            foregroundColor: const Color.fromARGB(255, 238, 142, 8),
-            height: 70,
-            width: 314,
-            radius: 30,
           ),
         ),
       ],

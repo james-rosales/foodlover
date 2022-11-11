@@ -17,7 +17,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return const SplashscreenPage();
+        return const DashboardPage();
       },
     ),
     GoRoute(
@@ -64,6 +64,24 @@ class MyApp extends StatelessWidget {
       routerConfig: _router,
       title: 'Food Bank',
       theme: ThemeData(
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+            elevation: 0.0,
+            backgroundColor: Color.fromARGB(255, 254, 253, 253),
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            type: BottomNavigationBarType.fixed,
+            selectedIconTheme: IconThemeData(
+              shadows: [
+                Shadow(
+                  color: Color.fromARGB(213, 243, 199, 123),
+                  blurRadius: 20,
+                  offset: Offset(
+                    0.0,
+                    2.0,
+                  ),
+                ),
+              ],
+            )),
         progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: Color.fromARGB(
             255,
@@ -92,7 +110,7 @@ class MyApp extends StatelessWidget {
               30,
             ),
           ),
-          backgroundColor: const Color.fromARGB(237, 237, 237, 237),
+          backgroundColor: const Color.fromARGB(255, 254, 253, 253),
         ),
         tabBarTheme: TabBarTheme(
           labelColor: const Color.fromARGB(169, 0, 0, 0),
@@ -171,7 +189,7 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 216, 216, 216),
+        scaffoldBackgroundColor: Color.fromARGB(255, 254, 253, 253),
         fontFamily: 'SF Pro',
         primarySwatch: Colors.orange,
       ),
