@@ -7,7 +7,7 @@ class SplashscreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Color.fromARGB(255, 242, 159, 159),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
