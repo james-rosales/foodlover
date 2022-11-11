@@ -68,7 +68,7 @@ class LabeledContainers extends StatelessWidget {
                                 color: Color.fromARGB(255, 92, 92, 92)),
                           ),
                           const Text(
-                            '₱39.00',
+                            '₱69.00',
                             style: TextStyle(
                                 fontSize: 20,
                                 color: Color.fromARGB(255, 241, 160, 37)),

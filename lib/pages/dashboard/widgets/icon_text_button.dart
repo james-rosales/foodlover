@@ -18,14 +18,14 @@ class IconTextButton extends StatelessWidget {
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Icon(
               iCon,
-              color: const Color.fromARGB(255, 243, 213, 162),
+              color: const Color.fromARGB(255, 242, 127, 98),
               size: 30,
             ),
           ),
           label: Text(
             label,
             style: const TextStyle(
-                color: Color.fromARGB(255, 236, 234, 234),
+                color: Color.fromARGB(255, 129, 129, 129),
                 fontFamily: 'SF Pro',
                 fontSize: 17),
           ),

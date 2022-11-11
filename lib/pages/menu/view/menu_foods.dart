@@ -11,7 +11,7 @@ class MenuFoods extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            ...List.generate(10, (index) {
+            ...List.generate(100, (index) {
               return const LabeledContainers();
             }),
           ],

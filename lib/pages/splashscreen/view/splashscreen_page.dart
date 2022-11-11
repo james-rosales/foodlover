@@ -19,7 +19,9 @@ class SplashscreenPage extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: const SplashscreenForm(),
+        child: const SingleChildScrollView(
+          child: SplashscreenForm(),
+        ),
       ),
     );
   }
