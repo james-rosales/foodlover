@@ -13,6 +13,7 @@ class LoginPage extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return Scaffold(
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             body: SingleChildScrollView(
               child: LoginForm(),
             ),

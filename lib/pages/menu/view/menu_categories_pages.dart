@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodbank/pages/menu/menu.dart';
+import 'package:foodbank/pages/menu/view/menu_foods.dart';
 
 class MenuCategoriesPages extends StatelessWidget {
   const MenuCategoriesPages({super.key});
@@ -18,7 +19,7 @@ class MenuCategoriesPages extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: const [
-          Text('Foods'),
+          MenuFoods(),
           Text('DRINKS'),
           Text('SNACKS'),
           Text('SAUCE'),

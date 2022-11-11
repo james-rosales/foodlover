@@ -17,7 +17,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return const DashboardPage();
+        return const SplashscreenPage();
       },
     ),
     GoRoute(
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             elevation: 0.0,
-            backgroundColor: Color.fromARGB(255, 254, 253, 253),
+            backgroundColor: Color.fromARGB(255, 247, 246, 246),
             showSelectedLabels: false,
             showUnselectedLabels: false,
             type: BottomNavigationBarType.fixed,
@@ -110,7 +110,7 @@ class MyApp extends StatelessWidget {
               30,
             ),
           ),
-          backgroundColor: const Color.fromARGB(255, 254, 253, 253),
+          backgroundColor: Color.fromARGB(255, 247, 246, 246),
         ),
         tabBarTheme: TabBarTheme(
           labelColor: const Color.fromARGB(169, 0, 0, 0),
@@ -189,7 +189,7 @@ class MyApp extends StatelessWidget {
             fontSize: 15,
           ),
         ),
-        scaffoldBackgroundColor: Color.fromARGB(255, 254, 253, 253),
+        scaffoldBackgroundColor: Color.fromARGB(255, 247, 246, 246),
         fontFamily: 'SF Pro',
         primarySwatch: Colors.orange,
       ),

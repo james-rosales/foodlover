@@ -43,6 +43,7 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/screen-picture.png
+    - assets/images/hamburger.png
     
  
   fonts:

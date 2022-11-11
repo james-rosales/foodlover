@@ -8,6 +8,7 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: BlocProvider<RegisterBloc>(
         create: (context) => RegisterBloc(RegisterState()),
         child: RegisterForm(),

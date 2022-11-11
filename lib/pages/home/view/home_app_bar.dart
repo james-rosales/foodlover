@@ -14,6 +14,7 @@ class HomeAppBar extends StatelessWidget {
       return DefaultTabController(
         length: 2,
         child: Scaffold(
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
           appBar: AppBar(
             flexibleSpace: Container(
               decoration: const BoxDecoration(

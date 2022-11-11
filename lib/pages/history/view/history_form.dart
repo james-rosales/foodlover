@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DashboardForm extends StatelessWidget {
-  const DashboardForm({super.key});
+class HistoryForm extends StatelessWidget {
+  const HistoryForm({super.key});
 
   @override
   Widget build(BuildContext context) {

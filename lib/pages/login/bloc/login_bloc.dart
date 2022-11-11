@@ -74,7 +74,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     emit(state.copyWith(
       requestStatus: RequestStatus.waiting,
     ));
-    if (state.email.value != email && state.password.value != password) {
+    if (state.email.value != email || state.password.value != password) {
       emit(
         state.copyWith(
           requestStatus: RequestStatus.failure,

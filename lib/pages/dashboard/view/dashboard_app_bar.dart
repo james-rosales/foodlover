@@ -5,22 +5,19 @@ class DashboardAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: AppBar(
-        elevation: 0.0,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-            ),
+    return AppBar(
+      elevation: 0.0,
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.shopping_cart_outlined,
           ),
-        ],
-        backgroundColor: const Color.fromARGB(255, 254, 253, 253),
-        shape: const BeveledRectangleBorder(),
-        title: const Text('Food Bank'),
-      ),
+        ),
+      ],
+      backgroundColor: const Color.fromARGB(255, 247, 246, 246),
+      shape: const BeveledRectangleBorder(),
+      title: const Text('Food Bank'),
     );
   }
 }

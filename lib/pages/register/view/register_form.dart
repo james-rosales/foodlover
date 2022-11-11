@@ -32,7 +32,7 @@ class RegisterForm extends StatelessWidget {
     var bloc = context.read<RegisterBloc>();
     return BlocBuilder<RegisterBloc, RegisterState>(builder: (context, state) {
       return Scaffold(
-        backgroundColor: const Color.fromARGB(105, 232, 230, 230),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: SingleChildScrollView(
           child: Column(
             children: [

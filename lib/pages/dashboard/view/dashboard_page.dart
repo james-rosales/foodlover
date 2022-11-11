@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:foodbank/pages/dashboard/dashboard.dart';
+import 'package:foodbank/pages/dashboard/view/dashboard_app_bar.dart';
 import 'package:foodbank/pages/dashboard/view/dashboard_drawer.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -15,7 +16,7 @@ class DashboardPage extends StatelessWidget {
           drawer: DashboardDrawer(),
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(
-              80,
+              60,
             ),
             child: DashboardAppBar(),
           ),

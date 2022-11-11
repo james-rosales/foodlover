@@ -14,6 +14,7 @@ class MenuCategories extends StatelessWidget {
     ) {
       return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           elevation: 0.0,
           shape: const BeveledRectangleBorder(),
           title: DefaultTabController(

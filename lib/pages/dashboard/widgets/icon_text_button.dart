@@ -13,13 +13,13 @@ class IconTextButton extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextButton.icon(
-          onPressed: () {},
+          onPressed: () => onPressed?.call(),
           icon: Padding(
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Icon(
               iCon,
               color: Color.fromARGB(255, 243, 213, 162),
-              size: 24,
+              size: 30,
             ),
           ),
           label: Text(

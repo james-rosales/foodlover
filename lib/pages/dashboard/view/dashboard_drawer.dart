@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodbank/pages/dashboard/widgets/widgets.dart';
+import 'package:go_router/go_router.dart';
 
 class DashboardDrawer extends StatelessWidget {
   const DashboardDrawer({super.key});
@@ -14,7 +15,7 @@ class DashboardDrawer extends StatelessWidget {
         decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(
-              200,
+              100,
             ),
           ),
           gradient: LinearGradient(
@@ -47,13 +48,13 @@ class DashboardDrawer extends StatelessWidget {
             const ListTile(
               title: IconTextButton(
                 label: 'Profile',
-                iCon: FontAwesomeIcons.user,
+                iCon: Icons.person,
               ),
             ),
             const ListTile(
               title: IconTextButton(
                 label: 'Orders',
-                iCon: FontAwesomeIcons.cartShopping,
+                iCon: Icons.shopping_cart_rounded,
               ),
             ),
             const ListTile(
@@ -65,7 +66,7 @@ class DashboardDrawer extends StatelessWidget {
             const ListTile(
               title: IconTextButton(
                 label: 'Privacy Policy',
-                iCon: FontAwesomeIcons.noteSticky,
+                iCon: Icons.sticky_note_2_rounded,
               ),
             ),
             const ListTile(
@@ -74,8 +75,9 @@ class DashboardDrawer extends StatelessWidget {
                 iCon: FontAwesomeIcons.shieldHalved,
               ),
             ),
-            const ListTile(
+            ListTile(
               title: IconTextButton(
+                onPressed: () => context.push('/home'),
                 label: 'Sign out',
                 iCon: FontAwesomeIcons.rightFromBracket,
               ),

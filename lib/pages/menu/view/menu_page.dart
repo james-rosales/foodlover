@@ -11,7 +11,7 @@ class MenuPage extends StatelessWidget {
         create: (context) => MenuBloc(MenuState()),
         child: const Scaffold(
           appBar: PreferredSize(
-            preferredSize: Size.fromHeight(210),
+            preferredSize: Size.fromHeight(190),
             child: MenuAppBar(),
           ),
           body: MenuCategories(),
