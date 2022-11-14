@@ -9,12 +9,14 @@ class MenuFoods extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            ...List.generate(100, (index) {
-              return const LabeledContainers();
-            }),
-          ],
+        child: SingleChildScrollView(
+          child: Row(
+            children: [
+              ...List.generate(100, (index) {
+                return const LabeledContainers();
+              }),
+            ],
+          ),
         ),
       ),
     );
