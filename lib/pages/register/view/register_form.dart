@@ -37,15 +37,15 @@ class RegisterForm extends StatelessWidget {
           child: Column(
             children: [
               LabeledTextfield(
-                errorText: state.email.error,
+                errorText: state.fullname.error,
                 onChanged: (value) => bloc.add(
-                  EmailChanged(
+                  FullNameChanged(
                     value,
                   ),
                 ),
-                label: AppLocalizations.of(context)?.email ?? '',
-                hintText: AppLocalizations.of(context)?.email ?? '',
-                prefixIcon: const Icon(Icons.email),
+                label: AppLocalizations.of(context)?.fullname ?? '',
+                hintText: AppLocalizations.of(context)?.fullname ?? '',
+                prefixIcon: const Icon(Icons.person),
               ),
               LabeledTextfield(
                 errorText: state.password.error,
@@ -110,15 +110,15 @@ class RegisterForm extends StatelessWidget {
                 prefixIcon: const Icon(Icons.lock),
               ),
               LabeledTextfield(
-                errorText: state.fullname.error,
+                errorText: state.email.error,
                 onChanged: (value) => bloc.add(
-                  FullNameChanged(
+                  EmailChanged(
                     value,
                   ),
                 ),
-                label: AppLocalizations.of(context)?.fullname ?? '',
-                hintText: AppLocalizations.of(context)?.fullname ?? '',
-                prefixIcon: const Icon(Icons.person),
+                label: AppLocalizations.of(context)?.email ?? '',
+                hintText: AppLocalizations.of(context)?.email ?? '',
+                prefixIcon: const Icon(Icons.email),
               ),
               Padding(
                   padding: const EdgeInsets.only(
