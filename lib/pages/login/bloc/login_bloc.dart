@@ -68,8 +68,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   Future<void> _loginPressed(
       LoginPressed event, Emitter<LoginState> emit) async {
-    String email = 'admin@yahoo.com';
-    String password = '123456';
+    String email = 'admin';
+    String password = '123';
 
     emit(state.copyWith(
       requestStatus: RequestStatus.waiting,
